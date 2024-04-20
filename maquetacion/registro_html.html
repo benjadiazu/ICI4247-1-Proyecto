@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andino</title>
+    <link rel="stylesheet" href="styles/registerStyle.css">
+</head>
+<body>
+    <div class="section_init_session">
+        <p id="login">Login</p>
+        <div>
+            <form method="post">
+                <div class="input_content"><input id="user_name" class="input" placeholder="User name" required="true"></div>
+                <div class="input_content"><input id="password" class="input" placeholder="Password" required="true" type="password"></div>
+                <div><button id="sign_in"  type="button">Sign In </button></div>
+                <!--
+                    <div><input id="sign_in"type="submit" value="Sign in"/></div>
+                -->
+                
+            </form>
+        </div>
+    </div>
+    <div id="init_session">
+        <div class="button">
+            <div id="content_img">
+                <img id="imagen_g" src="src/google-icone-symbole-logo.png">
+                <p id="google">Sign in with Google</p>
+            </div>
+        </div>
+        <div class="button">
+            <div id="content_img">
+                <img id="imagen_f" src="src/icons8-facebook-50.png">
+                <p >Sign in with Facebook</p>
+            </div>
+        </div>
+    </div>
+        
+    <div class="register">
+        <p>¿Don't have account?</p>
+        <button type="button">Register</button>
+    </div>
+    <script src="js/initScript.js" async defer></script>
+</body>
+</html>

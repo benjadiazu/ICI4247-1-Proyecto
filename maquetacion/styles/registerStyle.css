@@ -1,0 +1,79 @@
+body{
+    background-color: #393E41;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 932px;
+}
+
+form{
+    width: 100%;
+}
+
+.section_init_session{
+    color:white;
+    text-align: center;
+    margin:15px;
+}
+
+.input_content{
+    margin-bottom: 10px;;
+}
+
+.input{
+    border: 1px solid #ccc; /* Añade un borde alrededor de los inputs */
+    border-radius: 5px; /* Redondea un poco las esquinas del borde */
+    padding: 8px; 
+}
+
+#login{
+    font-size: 50px;
+}
+
+#sign_in{
+    border-radius: 50px;
+    width: 100px;
+    height: 30px;
+}
+
+#init_session{
+    display: flex;
+    gap:10px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    margin:0px;
+}
+
+.button{
+    border-style: solid;
+    border-radius: 50px;
+    background-color: white;
+    width: 250px;
+}
+
+#content_img{
+    display:flex;
+    justify-content:flex-start;
+    gap:15px;
+}
+
+#imagen_f{
+    width: 50px;
+    height: 50px;
+}
+
+#imagen_g{
+    width: 50px;
+    height: 50px;
+}
+
+.register{
+    color:white;
+    text-align: center;
+    width:100%;
+}
+
+
