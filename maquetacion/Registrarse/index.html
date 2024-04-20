@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="img/back.png" height="50" weight="80">
+        <h1>Create a New Account</h1>
+    </header>
+    <form>
+        <input id="user_name" placeholder="User Name"><br>
+        <input id="rut" placeholder="RUT"><br>
+        <input id="email" placeholder="Email"><br>
+        <!-- <input id="region" placeholder="Region"><br> -->
+        <select name="Region" id="region">
+          <option value="Arica Y Parinacota">Arica Y Parinacota</option>
+          <option value="Tarapacá">Tarapacá</option>
+          <option value="Atacama">Atacama</option>
+          <option value="Coquimbo">Coquimbo</option>
+          <option value="Valparaíso">Valparaíso</option>
+          <option value="Metropolitana">Metropolitana</option>
+          <option value="O'higgins">O'higgins</option>
+          <option value="Maule">Maule</option>
+          <option value="Ñuble">Ñuble</option>
+          <option value="Biobío">Biobío</option>
+          <option value="La araucanía">La Araucanía</option>
+          <option value="Los Ríos">Los Ríos</option>
+          <option value="Los Lagos">Los Lagos</option>
+          <option value="Aysén">Aysén</option>
+          <option value="Magallanes">Magallanes</option>
+        </select> 
+
+        <input id="commune" placeholder="Commune"><br>
+        <input id="password" placeholder="Password"><br>
+        <input id="confirm_password" placeholder="Confirm Password"><br>
+    </form>
+    <div class="abajo">
+        <input type="checkbox" id="terms">
+        <label for="terms">I agree to <a href="#">Terms and Conditions</a></label><br>
+        <br>
+        <hr>
+        <button>Sign up</button>  
+    </div>
+</body>
+</html>
