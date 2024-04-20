@@ -1,0 +1,83 @@
+*{
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    background-color: #393E41;
+}
+header h1{
+    text-align: center;
+    color:white;
+    font-family: "Montserrat", sans-serif;
+}
+
+.inputBox{
+    height: 100%;
+    width: 100%;
+    margin: 50px 5px;
+    position: relative;
+}
+.inputBox input{
+    height: 100%;
+    width: 90%;
+    padding: 10px;
+    border: none;
+    font-size: 17px;
+    color:#fff;
+    background-color: #393E41;
+    border-bottom: 2px solid silver;
+}
+
+.inputBox input:focus + label,
+.inputBox input:valid + label{
+    /* transform: translateY(-50px); */
+    font-size: 15px;
+    font-weight: 500;
+    color: #25acce;
+}
+
+.inputBox label{
+    position: relative;
+    bottom: 55px;
+    left: 0;
+    color: grey;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.inputBox .underline{
+    position: relative;
+    bottom: 21px;
+    height: 2px;
+    width: 100%;
+}
+.inputBox .underline:before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #25acce;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.inputBox input:focus + .underline:before,
+.inputBox input:valid + .underline:before{
+    transform: scaleX(1);
+}
+
+.terms{
+    color: #fff;
+}
+.terms input{
+    height: 20px;
+    width: 20px;
+}
+.terms a{
+    color: #2758df;
+}
+
+button{
+    position: relative;
+    height: 60px;
+    width: 100px;
+    margin: 70px 140px;
+}
