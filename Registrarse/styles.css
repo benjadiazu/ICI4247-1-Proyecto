@@ -1,16 +1,15 @@
 header h1{
     text-align: center;
     color:white;
+    font-family: "Montserrat", sans-serif;
 }
-
-
 
 input{
     height: 30px;
     width: 90%;
     margin: 15px;
     border-radius: 10px;
-
+    font-family: "Montserrat", sans-serif;
 }
 
 select{
@@ -18,6 +17,7 @@ select{
     width: 92%;
     margin: 15px;
     border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
 }
 
 div.abajo input{
@@ -28,6 +28,7 @@ div.abajo input{
 
 div.abajo label{
     font-size: 20px;
+    font-family: "Montserrat", sans-serif;
     color: white;
 }
 
@@ -40,9 +41,11 @@ button{
     height:50px;
     width:150px;
     font-size: medium;
+    font-family: "Montserrat", sans-serif;
     position:fixed;
     left:33%;
     top:75%;
+    
 }
 
 body{
