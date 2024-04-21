@@ -5,6 +5,7 @@
 body{
     background-color: #393E41;
 }
+
 header h1{
     text-align: center;
     color:white;
@@ -14,26 +15,20 @@ header h1{
 .inputBox{
     height: 100%;
     width: 100%;
-    margin: 50px 5px;
+    margin: 10px 5px;
     position: relative;
 }
 .inputBox input{
     height: 100%;
     width: 90%;
     padding: 10px;
+    margin: 5px;
     border: none;
+    outline: none;
     font-size: 17px;
     color:#fff;
     background-color: #393E41;
     border-bottom: 2px solid silver;
-}
-
-.inputBox input:focus + label,
-.inputBox input:valid + label{
-    /* transform: translateY(-50px); */
-    font-size: 15px;
-    font-weight: 500;
-    color: #25acce;
 }
 
 .inputBox label{
@@ -42,36 +37,30 @@ header h1{
     left: 0;
     color: grey;
     pointer-events: none;
+}
+.inputBox input:focus + label{
+    color: rgb(58, 186, 196);
     transition: all 0.3s ease;
 }
+
 .inputBox .underline{
     position: relative;
     bottom: 21px;
     height: 2px;
     width: 100%;
 }
-.inputBox .underline:before{
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    background: #25acce;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-.inputBox input:focus + .underline:before,
-.inputBox input:valid + .underline:before{
-    transform: scaleX(1);
+.error{
+    color: red!important;
 }
 
-.terms{
+.terms_conditions{
     color: #fff;
 }
-.terms input{
+.terms_conditions input{
     height: 20px;
     width: 20px;
 }
-.terms a{
+.terms_conditions a{
     color: #2758df;
 }
 
@@ -81,3 +70,27 @@ button{
     width: 100px;
     margin: 70px 140px;
 }
+
+.inputBox #solo{
+    position: static;
+}
+
+.inputBox #solo2{
+    position: static;
+}
+
+.inputBox #region{
+    padding: 10px 6px;
+    margin: 20px 0px;    
+}
+
+.inputBox #comuna{
+    padding: 10px 6px;
+    margin: 20px 0px; 
+}
+
+
+
+
+
+
