@@ -9,7 +9,7 @@ function cargarUsuarios() {
                 const clave = usuario.username;
                 mapaUsuarios.set(clave, usuario);
             });
-            //console.log('Mapa de usuarios cargado:', mapaUsuarios);
+            console.log('Mapa de usuarios cargado:', mapaUsuarios);
         })
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 
@@ -21,13 +21,14 @@ function cargarUsuarios() {
 function autenticarUsuario(user_name, password, mapaUsuarios) {
     if (mapaUsuarios.has(user_name)) {
         const usuario = mapaUsuarios.get(user_name);
-        if (usuario.password === password) {
+        if (usuario.contrasena === password) {
+            //Redirigir a nuevo html
             console.log('¡Autenticación exitosa! Bienvenido,', user_name);
         } else {
-            console.log('Error: Contraseña incorrecta para el usuario', user_name);
+            document.getElementById("errorMessages").textContent = "Usuario o contraseña incorrectos";
         }
-    } else {
-        console.log('Error: Usuario', user_name, 'no encontrado');
+    }else{
+        document.getElementById("errorMessages").textContent = "Usuario o contraseña incorrectos";
     }
 }
 
