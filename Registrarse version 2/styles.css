@@ -66,9 +66,9 @@ header h1{
 
 button{
     position: relative;
-    height: 60px;
-    width: 100px;
-    margin: 70px 140px;
+    height: 40px;
+    width: 120px;
+    margin: 40px 140px;
 }
 
 .inputBox #solo{

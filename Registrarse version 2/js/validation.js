@@ -30,6 +30,10 @@ $.validator.addMethod(
 $(document).ready(() => {
   console.log("signup.js cargado");
   
+  /*
+    No se agregan todas las comunas porque son demasiadas.
+  */
+
   $("#region").change((e) => {
     $("#comuna").empty();
     if ($("#region").find(":selected").val() === "15") {
@@ -174,7 +178,6 @@ $(document).ready(() => {
       const region = $("#region").val();
       const comuna = $("#comuna").val();
       const terms = $("#terms").val();
-      // const commune = $("#commune").val();
       const password = $("#password").val();
       console.table({ username, rut, email, region, comuna, password, terms});
     },
