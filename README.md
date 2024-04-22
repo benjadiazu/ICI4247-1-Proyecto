@@ -6,7 +6,16 @@
 
 [![ios-development-badge-sm]][ios-development-web] [![android-development-badge-sm]][android-development-web]
 
-</div>
+</div
+
+##Intregrantes:
+-Benjamín Díaz
+<br>
+-Benjamín Fernández
+<br>
+-Thomas Molina
+<br>
+-Néstor Ratemal
 
 ## Descripción
 
