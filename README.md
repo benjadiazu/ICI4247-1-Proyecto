@@ -15,15 +15,15 @@
 <br>
 -Thomas Molina
 <br>
--Néstor Ratemal
+-Néstor Retamal
 
 ## Descripción
 
-> La aplicación se desarrollará como un sistema de monitoreo y seguimiento de robots para los usuarios. Estos robots tienen la tarea de localizar y alertar automáticamente sobre la presencia de personas en situaciones críticas (identificadas en rojo) o en condiciones seguras (marcadas en verde). Por esta razón, la aplicación será capaz de ofrecer estadísticas detalladas sobre los viajes realizados por cada robot, incluyendo las instrucciones de la ruta seguida y la distancia recorrida.
+La aplicación se desarrollará como un sistema de monitoreo y seguimiento de robots para los usuarios. Estos robots tienen la tarea de localizar y alertar automáticamente sobre la presencia de personas en situaciones críticas (identificadas en rojo) o en condiciones seguras (marcadas en verde). Por esta razón, la aplicación será capaz de ofrecer estadísticas detalladas sobre los viajes realizados por cada robot, incluyendo las instrucciones de la ruta seguida y la distancia recorrida.
 
 ### Funcionalidades
 
-> Una vez la aplicación este en el dispositivo del usuario y sea ejecutada se le presentarán principalmente dos opciones. En primer lugar, el usuario podrá optar por iniciar sesión con su cuenta de Google o con una cuenta previamente registrada. Otra opción es registrar sus datos para crear una nueva cuenta. Estas opciones se detallan a continuación
+Una vez la aplicación este en el dispositivo del usuario y sea ejecutada se le presentarán principalmente dos opciones. En primer lugar, el usuario podrá optar por iniciar sesión con su cuenta de Google o con una cuenta previamente registrada. Otra opción es registrar sus datos para crear una nueva cuenta. Estas opciones se detallan a continuación
 
 ## Funcionalidad de registro de usuario
 
