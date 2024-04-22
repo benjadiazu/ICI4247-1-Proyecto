@@ -28,7 +28,7 @@ $.validator.addMethod(
 );
 
 $(document).ready(() => {
-  console.log("signup.js cargado");
+  console.log("validation.js cargado");
   
   /*
     No se agregan todas las comunas porque son demasiadas.
@@ -179,7 +179,45 @@ $(document).ready(() => {
       const comuna = $("#comuna").val();
       const terms = $("#terms").val();
       const password = $("#password").val();
+
       console.table({ username, rut, email, region, comuna, password, terms});
+
+      const newUser = {
+        "username": document.getElementById("username").value,
+        "rut": document.getElementById("rut").value,
+        "email": document.getElementById("email").value,
+        "region": document.getElementById("region").value,
+        "comuna": document.getElementById("comuna").value,
+        "contrasena": document.getElementById("password").value
+      };
+
+      const mapaUsuarios = cargarUsuarios();
+      agregarUsuario(newUser);
+
     },
   });
 });
+
+function cargarUsuarios() {
+  const mapaUsuarios = new Map();
+
+  fetch('data/users.json')
+      .then(response => response.json())
+      .then(data => {
+          data.forEach(usuario => {
+              const clave = usuario.username;
+              mapaUsuarios.set(clave, usuario);
+          });
+          console.log('Mapa de usuarios cargado:', mapaUsuarios);
+      })
+      .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+  // Devolver el mapa de usuarios para poder acceder a él desde otras funciones
+  return mapaUsuarios;
+}
+
+function agregarUsuario(newUser){
+  // var jsonData = JSON.stringify(newUser);
+  console.log("Usuario Agregado");
+
+}
