@@ -19,12 +19,10 @@
 
 ## Descripción
 
-> [!NOTE]
 > La aplicación se desarrollará como un sistema de monitoreo y seguimiento de robots para los usuarios. Estos robots tienen la tarea de localizar y alertar automáticamente sobre la presencia de personas en situaciones críticas (identificadas en rojo) o en condiciones seguras (marcadas en verde). Por esta razón, la aplicación será capaz de ofrecer estadísticas detalladas sobre los viajes realizados por cada robot, incluyendo las instrucciones de la ruta seguida y la distancia recorrida.
 
 ### Funcionalidades
 
-> [!NOTE]
 > Una vez la aplicación este en el dispositivo del usuario y sea ejecutada se le presentarán principalmente dos opciones. En primer lugar, el usuario podrá optar por iniciar sesión con su cuenta de Google o con una cuenta previamente registrada. Otra opción es registrar sus datos para crear una nueva cuenta. Estas opciones se detallan a continuación
 
 ## Funcionalidad de registro de usuario
@@ -78,10 +76,6 @@ La funcionalidad de monitor consistirá en mostrar al usuario un registro de la 
 
 </div>
 
-## Maquetación web
-
-> [!NOTE]
-> Debe incluir los archivos de maquetación en la carpeta respectiva, e incluir una breve descripción de dichos archivos.
 
 [js-badge-sm]: https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat
 [js-web]: https://developer.mozilla.org/es/docs/Web/JavaScript
