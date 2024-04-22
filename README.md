@@ -8,7 +8,7 @@
 
 </div
 
-##Intregrantes:
+## Intregrantes
 -Benjamín Díaz
 <br>
 -Benjamín Fernández
