@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/ionic3,macos,node,windows,yarn
 # Edit at https://www.toptal.com/developers/gitignore?templates=ionic3,macos,node,windows,yarn
 
+maquetacion/
+
 ### Ionic3 ###
 # Log an tmp data
 *~

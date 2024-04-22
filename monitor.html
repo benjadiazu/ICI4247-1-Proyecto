@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Andino Robot Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Fuentes de Google-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/monitor_sytles.css">
+        <!--Íconos de Google-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+        <!--Scripts-->
+        <script src="js/script.js" async defer></script>
+    </head>
+    <body>
+        <!--Título de sección, retorno y perfil en banner camuflado-->
+        <header class="header">
+            <div class="icon_components">
+                <a href="menu.html">
+                    <div class="return_option"> 
+                        <scan class="material-symbols-outlined arrowback">arrow_back</scan>
+                    </div>
+                </a>
+                <div class="profile">
+                    <img class="profile_photo" src="src/torresDelPaine.jpg" alt="User Profile Photo">
+                </div>
+            </div>
+            <div class="section_title">
+                Monitoring
+            </div>
+
+        </header>
+        <!--Monitoreo de Ruta-->
+        <section class="monitoring_section">
+            <div class="routing_info">
+                <div class="title">
+                    Robot Route
+                </div>
+                <div class="route_area">
+                    <div class="route_step white_step" id="first">
+                        <div class="instruction">
+                            <p>Route finished. <br> Robot is back into the Start.</p>
+                        </div>
+                    </div>
+                    <div class="route_step black_step" id="second">
+                        <div class="instruction">
+                            <p>Black Square detected. <br> Turned left and advanced 1 m.</p>
+                        </div>
+                    </div>
+                    <div class="route_step white_step" id="third">
+                        <div class="instruction">
+                            <p>Turned right and advanced 3 m.</p>
+                        </div>
+                    </div>
+                    <div class="route_step red_step" id="fourth">
+                        <div class="instruction">
+                            <p>PERSON DETECTED <br> State: Critical</p>
+                        </div>
+                        <div class="sign arrowsign_up">
+                            <span class="material-symbols-outlined arrowsign_up">arrow_upward</span>
+                        </div>
+                    </div>
+                    <div class="route_step white_step" id="fifth">
+                        <div class="instruction">
+                            <p>Turned right and advance 2 m.</p>
+                        </div>
+                    </div>
+                    <div class="route_step white_step" id="sixth">
+                        <div class="instruction">
+                            <p>Robot started the trip by going 4 m straight.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Menú de opciones-->
+        <footer class="footer_content">
+            <a href="menu.html">
+                <div class="footer_option" id="menu">
+                    <div class="img_option" id="img_menu">
+                        <span class="material-symbols-outlined">home</span>
+                    </div>
+                    <div class="option_name" id="menu_title">
+                        Menu
+                    </div>
+                </div>
+            </a>
+            <div class="footer_option" id="connect">
+                <a href="connect.html">
+                    <div class="img_option" id="img_connect">
+                        <span class="material-symbols-outlined">sensors</span>
+                    </div>
+                    <div class="option_name" id="connect_title">
+                        Connect
+                    </div>
+                </a>
+            </div>
+            <div class="footer_option" id="monitor">
+                <a href="#">
+                    <div class="img_option" id="img_monitor">
+                        <span class="material-symbols-outlined">device_hub</span>
+                    </div>
+                    <div class="option_name" id="monitor_title">
+                        Monitor
+                    </div>
+                </a>
+            </div>
+            <div class="footer_option" id="stats">
+                <a href="stats.html">
+                    <div class="img_option" id="img_stats">
+                        <span class="material-symbols-outlined">analytics</span>
+                    </div>
+                    <div class="option_name" id="stats_title">
+                        Stats
+                    </div>
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>

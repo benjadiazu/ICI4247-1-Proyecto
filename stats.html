@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Andino Robot Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Fuentes de Google-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/stats_sytles.css">
+        <!--Íconos de Google-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+        <!--Scripts-->
+        <script src="js/script.js" async defer></script>
+    </head>
+    <body>
+        <!--Título de sección, retorno y perfil en banner camuflado-->
+        <header class="header">
+            <div class="icon_components">
+                <a href="menu.html">
+                    <div class="return_option"> 
+                        <scan class="material-symbols-outlined arrowback">arrow_back</scan>
+                    </div>
+                </a>
+                <div class="profile">
+                    <img class="profile_photo" src="src/torresDelPaine.jpg" alt="User Profile Photo">
+                </div>
+            </div>
+            <div class="section_title">
+                Stadistics
+            </div>
+
+        </header>
+        <!--Sección de estadísticas-->
+        <section class="stats_section">
+            <div class="stats_details">
+                <div class="stat_display">
+                    <div class="stat_format single_format">
+                        <div class="title">
+                            People Rescued
+                        </div>
+                        <div class="data_shape shape_rectangle color_blue">
+                            18
+                        </div>
+                    </div>
+                </div>
+                <div class="stat_display">
+                    <div class="stat_format group_format">
+                        <div class="title">
+                            Safe
+                        </div>
+                        <div class="data_shape shape_squared color_green">
+                            14
+                        </div>
+                    </div>
+                    <div class="stat_format group_format">
+                        <div class="title">
+                            Critical
+                        </div>
+                        <div class="data_shape shape_squared color_red">
+                            4
+                        </div>
+                    </div>
+                    <div class="stat_format group_format">
+                        <div class="title">
+                            Mileage
+                        </div>
+                        <div class="data_shape shape_squared color_purple">
+                            0.3 km
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats_history">
+                <div class="title">
+                    Recent Sesions
+                </div>
+                <div class="stats_area">
+                    <div class="recent_sessions" id="first">
+                        <div class="data">
+                            <p>Name Trip: Trip6 <br> Robot Model: TOBOR</p>
+                        </div>
+                        <div class="date">
+                            <p>Date: 03/31/2024</p>                          
+                        </div>
+                    </div>
+                    <div class="recent_sessions" id="second">
+                        <div class="data">
+                            <p>Name Trip: Trip5 <br> Robot Model: TOBOR</p>
+                        </div>
+                        <div class="date">
+                            <p>Date: 03/29/2024</p>                          
+                        </div>
+                    </div>
+                    <div class="recent_sessions" id="third">
+                        <div class="data">
+                            <p>Name Trip: Trip4 <br> Robot Model: TOBOR</p>
+                        </div>
+                        <div class="date">
+                            <p>Date: 03/15/2024</p>                          
+                        </div>
+                    </div>
+                    <div class="recent_sessions" id="fourth">
+                        <div class="data">
+                            <p>Name Trip: Trip3 <br> Robot Model: TOBOR</p>
+                        </div>
+                        <div class="date">
+                            <p>Date: 02/24/2024</p>                          
+                        </div>
+                    </div>
+                    <div class="recent_sessions" id="fifth">
+                        <div class="data">
+                            <p>Name Trip: Trip2 <br> Robot Model: TOBOR</p>
+                        </div>
+                        <div class="date">
+                            <p>Date: 02/23/2024</p>                          
+                        </div>
+                    </div>
+                    <div class="recent_sessions" id="sixth">
+                        <div class="data">
+                            <p>Name Trip: Trip1 <br> Robot Model: TOBOR</p>
+                        </div>
+                        <div class="date">
+                            <p>Date: 02/20/2024</p>                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Menú de opciones-->
+        <footer class="footer_content">
+            <a href="menu.html">
+                <div class="footer_option" id="menu">
+                    <div class="img_option" id="img_menu">
+                        <span class="material-symbols-outlined">home</span>
+                    </div>
+                    <div class="option_name" id="menu_title">
+                        Menu
+                    </div>
+                </div>
+            </a>
+            <div class="footer_option" id="connect">
+                <a href="connect.html">
+                    <div class="img_option" id="img_connect">
+                        <span class="material-symbols-outlined">sensors</span>
+                    </div>
+                    <div class="option_name" id="connect_title">
+                        Connect
+                    </div>
+                </a>
+            </div>
+            <div class="footer_option" id="monitor">
+                <a href="monitor.html">
+                    <div class="img_option" id="img_monitor">
+                        <span class="material-symbols-outlined">device_hub</span>
+                    </div>
+                    <div class="option_name" id="monitor_title">
+                        Monitor
+                    </div>
+                </a>
+            </div>
+            <div class="footer_option" id="stats">
+                <a href="#">
+                    <div class="img_option" id="img_stats">
+                        <span class="material-symbols-outlined">analytics</span>
+                    </div>
+                    <div class="option_name" id="stats_title">
+                        Stats
+                    </div>
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>
