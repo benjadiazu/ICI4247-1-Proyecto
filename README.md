@@ -20,12 +20,55 @@
 ## Descripción
 
 > [!NOTE]
-> Crear una breve descripción de su proyecto.
+> La aplicación se desarrollará como un sistema de monitoreo y seguimiento de robots para los usuarios. Estos robots tienen la tarea de localizar y alertar automáticamente sobre la presencia de personas en situaciones críticas (identificadas en rojo) o en condiciones seguras (marcadas en verde). Por esta razón, la aplicación será capaz de ofrecer estadísticas detalladas sobre los viajes realizados por cada robot, incluyendo las instrucciones de la ruta seguida y la distancia recorrida.
 
 ### Funcionalidades
 
 > [!NOTE]
-> Crear una lista numerada con las funcionalidades propuestas para su proyecto.
+> Una vez la aplicación este en el dispositivo del usuario y sea ejecutada se le presentarán principalmente dos opciones. En primer lugar, el usuario podrá optar por iniciar sesión con su cuenta de Google o con una cuenta previamente registrada. Otra opción es registrar sus datos para crear una nueva cuenta. Estas opciones se detallan a continuación
+
+## Funcionalidad de registro de usuario
+
+Al seleccionar la función de registro, se redireccionará a una nueva ventana donde aparecerá un conjunto de textos indicando la información solicitada y justo debajo, una casilla donde podrá ingresar texto o seleccionar opciones. Al presionarla, se desplegará un teclado para ingresar los datos. Los parámetros solicitados en el registro serán los siguientes:
+
+- **Nombre de usuario (username):** Correspondiente al primer nombre del consumidor seguido de su primer apellido (ej: Aquiles Baeza). La longitud total no deberá exceder los 50 caracteres.
+- **RUT**: El identificador único de una persona se conformará según el siguiente formato: xxxxxxxx-x. Será un tipo de dato de cadena de texto con un máximo de 10 caracteres, permitiendo solo números antes del guion y un número o una letra después de este.
+- **Correo Electrónico (email)**:
+- **Región**: Siendo el usuario de la aplicación una persona que reside en Chile, se le solicitará que elija una región de entre las 16 regiones actuales del país. Esta lista de opciones incluirá todas las regiones disponibles para su selección y será una lista desplegable donde solo deberá seleccionar la correspondiente.
+- **Comuna**: Una vez seleccionada la región, se podrá elegir una de las comunas correspondientes a dicha región en un listado predefinido. En este listado, se deberá marcar únicamente la opción que corresponda legítimamente a la persona. Se desplegará un listado de las comunas.
+- **Contraseña:** Conjunto de caracteres que pueden ser números, letras minúsculas y mayúsculas  para dar acceso a las funcionalidades de la aplicación. Deben ser mínimo 8 caracteres, teniendo un máximo de 21 caracteres. Como recomendación, al usuario se le pedirá al menos un carácter de cada tipo. De no cumplir con los requisitos se le indicará al usuario que su contraseña es muy débil y deberá ingresar una nueva.
+- **Confirmación de contraseña:** Conjunto de caracteres que pueden ser números, letras minúsculas y mayúsculas. Deben ser mínimo 8 caracteres, teniendo un máximo de 21 caracteres. Se solicitará al usuario que repita la misma contraseña para validar que se hayan ingresado correctamente. Si las contraseñas no coinciden, se mostrará un mensaje indicando que no hay coincidencias entre las contraseñas.
+- **Aceptación de términos y condiciones:** Se presentará un panel de texto que mostrará el contrato que el consumidor debe aceptar para acceder a la aplicación. Si el consumidor decide aceptarlo, se le permitirá registrar sus datos y se procederá a crear la cuenta. En caso de no aceptar el contrato, el consumidor no podrá utilizar la aplicación.
+
+## Funcionalidad de inicio de sesión
+
+Al abrir la aplicación para iniciar sesión mediante un formulario de celdas, se debe introducir la cuenta con el formato "*nombre_de_usuario@nombre_de_dominio.extensión_de_dominio*", por ejemplo: *aquiles.baeza@gmail.com.* Además, se requiere ingresar la contraseña. En caso de ingresar incorrectamente alguno de los datos mencionados anteriormente, la página se recargará y se enviará una notificación al usuario.
+
+Si el usuario desea iniciar sesión con su cuenta de Google, debe haber iniciado sesión previamente en su dispositivo. En este caso, será redirigido a una nueva ventana donde deberá seleccionar la cuenta que desea sincronizar con la aplicación.
+
+## Funcionalidad de sincronización del robot
+
+Esta funcionalidad se encarga de mostrar los dispositivos conectados o los agregados recientemente. En la sección de dispositivos conectados se presentará la siguiente información:
+
+- Nombre del robot.
+- ID del robot.
+- Batería del robot.
+
+Además, para cada robot vinculado existirá un botón deslizable que permitirá conectar o desconectar el robot de la aplicación.
+
+## Funcionalidad de análisis estadístico
+
+Esta funcionalidad consiste en mostrar por pantalla la cantidad total de personas con las que ha interactuado el robot en el viaje actual, mostrando también por separado cuantas de estas se encontraban seguras y cuantas se encontraban en estado critico.
+
+Por otro lado también se mostrara un historial de los viajes anteriores en los cuales se muestra la siguiente información:
+
+- Name Trip: Nombre del viaje(ID)
+- Robot Model: Modelo del robot
+- Date: Fecha en la que se realizo el viaje
+
+## Funcionalidad de monitor
+
+La funcionalidad de monitor consistirá en mostrar al usuario un registro de la ruta realizado por el robot. Esta ruta será desplegada con una ventana interna donde el usuario podrá deslizar para ver la ruta realizada desde el inicio hasta el fin del viaje. Dentro de esta ventana se indicara cada cambio de dirección realizado por el robot. Además, informar cada vez que encuentra una persona, mostrando si la persona se encuentra bien o en un estado critico. En caso de encontrar a un persona en estado critico, se podrá pulsar el indicador de la persona para luego entregar al usuario la ruta hacia dicha persona.
 
 ## Prototipo
 
