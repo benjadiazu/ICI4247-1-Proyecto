@@ -23,7 +23,7 @@ function autenticarUsuario(user_name, password, mapaUsuarios) {
         const usuario = mapaUsuarios.get(user_name);
         if (usuario.contrasena === password) {
             //Redirigir a nuevo html
-            console.log('¡Autenticación exitosa! Bienvenido,', user_name);
+            window.location.href = "menu.html";
         } else {
             document.getElementById("errorMessages").textContent = "Usuario o contraseña incorrectos";
         }
@@ -37,11 +37,28 @@ window.onload = function() {
     // Cargar el mapa de usuarios cuando la ventana se cargue
     const mapaUsuarios = cargarUsuarios();
 
+    //Usuario inicial si da problema cargar el json
+    var usuario = {
+        "username": "user0",
+        "rut": "00.000.000-0",
+        "email": "user0@example.com",
+        "region": "Metropolitana",
+        "comuna": "Santiago",
+        "contrasena": "password0"
+    };
+
+    mapaUsuarios.set(usuario);
+
     // Simular autenticación al hacer clic en un botón
     const sign_in = document.getElementById("sign_in");
     sign_in.onclick = function() {
         const user_name = document.getElementById("user_name").value;
         const password = document.getElementById("password").value;
         autenticarUsuario(user_name, password, mapaUsuarios);
+    };
+
+    const sign_up = document.getElementById("sign_up");
+    sign_up.onclick = function(){
+        window.location.href = "sign_up.html";
     };
 };
