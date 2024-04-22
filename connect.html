@@ -11,14 +11,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/monitor_sytles.css">
+        <link rel="stylesheet" href="css/connect_sytles.css">
         <!--Íconos de Google-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <!--Scripts-->
         <script src="js/script.js" async defer></script>
     </head>
@@ -32,7 +28,7 @@
                     </div>
                 </a>
                 <div class="profile">
-                    <img class="profile_photo" src="img/unnamed.jpg" alt="Gato_con_Cuchillo">
+                    <img class="profile_photo" src="img/torresDelPaine.jpg" alt="User Profile Photo">
                 </div>
             </div>
             <div class="section_title">
@@ -40,31 +36,67 @@
             </div>
 
         </header>
-        <!--Visualización de estadísticas-->
+        <!--Display de Dispositivos Disponibles-->
         <section class="content">
-            <div class="content_chart">
-                <div class="option" id="state">
-                    <div class="title">
-                        Robot State:
+            <div class="devices_display" id="active_device">
+                <div class="text">
+                    Active Device
+                </div>
+                <div class="bot_display">
+                    <div class="icon robot_icon">
+                        <span class="material-symbols-outlined">smart_toy</span>
                     </div>
-                    <div class="data">
-                        Deactivated
+                    <div class="bot_name">
+                        Bot 1
+                    </div>
+                    <div class="connection_info_display">
+                        <div class="connection_info" id="id">
+                            ID: 0307
+                        </div>
+                        <div class="connection_info" id="charge">
+                            Charge: 74%
+                        </div>
+                    </div>
+                    <div class="switch switch_icon">
+                        <span class="material-symbols-outlined">toggle_on</span>
                     </div>
                 </div>
-                <div class="option" id="monitor">
-                    <div class="title">
-                        Monitoring:
+            </div>
+            <div class="devices_display" id="recent_devices">
+                <div class="text">
+                    Recent Devices
+                </div>
+                <div class="bot_display">
+                    <div class="icon robot_icon">
+                        <span class="material-symbols-outlined">smart_toy</span>
                     </div>
-                    <div class="data">
-                        Deactivated
+                    <div class="bot_name">
+                        Bot 2
+                    </div>
+                    <div class="switch switch_icon">
+                        <span class="material-symbols-outlined">toggle_off</span>
                     </div>
                 </div>
-                <div class="option" id="last_connection">
-                    <div class="title">
-                        Last Connection:
+                <div class="bot_display">
+                    <div class="icon robot_icon">
+                        <span class="material-symbols-outlined">smart_toy</span>
                     </div>
-                    <div class="data">
-                        March 31st, 2024
+                    <div class="bot_name">
+                        Bot 3
+                    </div>
+                    <div class="switch switch_icon">
+                        <span class="material-symbols-outlined">toggle_off</span>
+                    </div>
+                </div>
+                <div class="bot_display">
+                    <div class="icon robot_icon">
+                        <span class="material-symbols-outlined">smart_toy</span>
+                    </div>
+                    <div class="bot_name">
+                        Bot 4
+                    </div>
+                    <div class="switch switch_icon">
+                        <span class="material-symbols-outlined">toggle_off</span>
                     </div>
                 </div>
             </div>
