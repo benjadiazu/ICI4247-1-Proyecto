@@ -1,0 +1,28 @@
+<ion-menu side="end" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    Settings
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-menu-button auto-hide="false">
+          <ion-icon name="person-circle-outline"  style="font-size: 32px;"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <app-tarjeta-estado></app-tarjeta-estado>
+    <app-tarjeta-monitor></app-tarjeta-monitor>
+    <app-tarjeta-conexion></app-tarjeta-conexion>
+  </ion-content>
+</div>

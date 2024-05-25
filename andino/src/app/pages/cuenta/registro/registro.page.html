@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/cuenta/login"
+        text="Volver"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1 align="center" style="margin-top: 60px;">Sign up</h1>
+  
+  <div class="registro" style="padding: 20px;">
+    <ion-input label="Username" class="item" label-placement="stacked" fill="solid" type="text" placeholder="Type your username"></ion-input>
+    <br>
+    <ion-input
+      label="Email" 
+      class="item" 
+      labelPlacement="stacked" 
+      fill="solid" 
+      type="email" 
+      placeholder="Type your email"
+      errorText="Invalid email"
+      ngModel
+      email></ion-input>
+    <br>
+    <ion-input label="RUT" class="item" labelPlacement="stacked" fill="solid" type="text" placeholder="Type your RUT"></ion-input>
+    <br>
+    <ion-select label="Región">
+      <ion-select-option value="Valparaíso">Valparaíso</ion-select-option>
+      <ion-select-option value="O'higgins">O'higgins</ion-select-option>
+      <ion-select-option value="Metropolitana">Metropolitana</ion-select-option>
+    </ion-select>
+    <br>
+    <ion-select label="Comuna">
+      <ion-select-option value="Viña del Mar">Viña del Mar</ion-select-option>
+      <ion-select-option value="Quillota">Quillota</ion-select-option>
+      <ion-select-option value="Valparaíso">Valparaíso</ion-select-option>
+    </ion-select>
+    <br>
+    <ion-input label="Password" class="item" labelPlacement="stacked" fill="solid" type="password" placeholder="Type your password"></ion-input>
+    <br>
+    <ion-input label="Confirm your password" class="item" labelPlacement="stacked" fill="solid" type="password" placeholder="Type your password"></ion-input>
+  </div>
+  <br>
+
+  <div style="padding: 20px;">
+    <ion-checkbox >I agree to the terms and conditions</ion-checkbox>
+  </div>
+
+  <div style="padding: 30px 40px;">
+    <ion-button shape="round" size="medium" expand="full" color="primary">Sign up</ion-button>
+  </div>
+
+  <!-- <app-continue-with></app-continue-with> -->
+</ion-content>

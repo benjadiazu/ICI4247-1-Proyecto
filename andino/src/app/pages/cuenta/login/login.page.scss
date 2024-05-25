@@ -1,0 +1,28 @@
+ion-input{
+    color:gray;
+}
+
+h1{
+    font-weight: 700;
+}
+
+.centered-text {
+    text-align: center;
+}
+.item{
+    width: 90vw;
+}
+.registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+ion-button {
+    text-transform: none;
+}
+// ion-item {
+//     --background: white; /* Cambia el color de fondo del input a blanco */
+//     color: #000
+// }

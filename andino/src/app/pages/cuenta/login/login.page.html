@@ -1,0 +1,33 @@
+<ion-content>
+  
+  <h1 align="center" style="margin-top: 100px;">Login</h1>
+  
+  <div class="registro" style="padding: 20px;">
+    <ion-input
+      label="Email" 
+      class="item" 
+      label-placement="floating" 
+      fill="solid" 
+      type="email" 
+      placeholder="Type your email"
+      errorText="Invalid email"
+      ngModel
+      email></ion-input>
+    <br>
+    <ion-input label="Password" class="item" labelPlacement="floating" fill="solid" type="password" placeholder="Type your password"></ion-input>
+    <p class="centered-text" style="margin-top: -5px;"><a>Forgot password?</a></p>
+  </div>
+  
+  <div style="padding: 0px 40px;">
+    <ion-button 
+      shape="round" 
+      size="medium" 
+      expand="full" 
+      color="primary"
+      href="/home">Login</ion-button>
+    <p class="centered-text">Don't have an account? <a href="/cuenta/registro/">Signup</a></p>
+  </div>
+
+ <app-continue-with></app-continue-with>
+  
+</ion-content>
