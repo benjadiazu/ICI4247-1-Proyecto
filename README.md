@@ -128,3 +128,17 @@ La funcionalidad de monitor consistirá en mostrar al usuario un registro de la 
 [figma-prot-url]: https://www.figma.com/proto/izTDjw4IxF5HbZ2ihwJmtO/Aplicaci%C3%B3n?type=design&node-id=2-3&t=XdaH4CLfEIYQdtkd-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A3
 [figma-dis-badge]: https://img.shields.io/badge/Ver%20diseño%20UI%20en%20Figma-F24E1E?logo=figma&logoColor=fff&style=flat
 [figma-dis-url]: https://www.figma.com/file/izTDjw4IxF5HbZ2ihwJmtO/Aplicaci%C3%B3n?type=design&node-id=0-1&mode=design&t=XdaH4CLfEIYQdtkd-0
+
+##Modelo de la Base de Datos
+
+Para gestionar los datos que manejará la aplicación se utilizará una base de datos de tipo relacional, que se encargará de guardar datos como:
+- Información de cada usuario que ingrese y se registre en la aplicación
+- Información acerca de todas las rutas.
+- Información acerca del robot y sus sensores.
+- Mediciones registradas por los sensores.
+
+A continuación se mostrarán los modelos conceptual y lógico de la base de datos.
+
+[IMAGEN]
+
+El script físico fue realizado para el motor de base de datos MySQL y se encuentra en el repositorio bajo el nombre "andino_web.sql".
