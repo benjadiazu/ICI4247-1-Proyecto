@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button
-        defaultHref="/cuenta/login"
+        defaultHref= "/cuenta/login/"
         text="Volver"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
@@ -10,48 +10,142 @@
 
 <ion-content [fullscreen]="true">
   <h1 align="center" style="margin-top: 60px;">Sign up</h1>
-  
-  <div class="registro" style="padding: 20px;">
-    <ion-input label="Username" class="item" label-placement="stacked" fill="solid" type="text" placeholder="Type your username"></ion-input>
-    <br>
-    <ion-input
-      label="Email" 
-      class="item" 
-      labelPlacement="stacked" 
+
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="registro" style="padding: 20px;">
+
+      <!-- USUARIO -->
+      <ion-input 
+      label="Username" 
+      type="text"
+      formControlName="usuario"
+      label-placement="stacked"
+      [errorText]="formError('usuario')" 
       fill="solid" 
-      type="email" 
-      placeholder="Type your email"
-      errorText="Invalid email"
-      ngModel
-      email></ion-input>
-    <br>
-    <ion-input label="RUT" class="item" labelPlacement="stacked" fill="solid" type="text" placeholder="Type your RUT"></ion-input>
-    <br>
-    <ion-select label="Región">
-      <ion-select-option value="Valparaíso">Valparaíso</ion-select-option>
-      <ion-select-option value="O'higgins">O'higgins</ion-select-option>
-      <ion-select-option value="Metropolitana">Metropolitana</ion-select-option>
-    </ion-select>
-    <br>
-    <ion-select label="Comuna">
-      <ion-select-option value="Viña del Mar">Viña del Mar</ion-select-option>
-      <ion-select-option value="Quillota">Quillota</ion-select-option>
-      <ion-select-option value="Valparaíso">Valparaíso</ion-select-option>
-    </ion-select>
-    <br>
-    <ion-input label="Password" class="item" labelPlacement="stacked" fill="solid" type="password" placeholder="Type your password"></ion-input>
-    <br>
-    <ion-input label="Confirm your password" class="item" labelPlacement="stacked" fill="solid" type="password" placeholder="Type your password"></ion-input>
-  </div>
-  <br>
+      type="text" 
+      placeholder="Type your username">
+        <div slot="label">Nombre <ion-text color="danger">(requerido)</ion-text></div>
+      </ion-input>
 
-  <div style="padding: 20px;">
-    <ion-checkbox >I agree to the terms and conditions</ion-checkbox>
-  </div>
+      <br>
+      <!-- email -->
+      <ion-input
+        label="Email"
+        type="email"  
+        formControlName="correo"
+        label-placement="floating" 
+        [errorText]="formError('correo')"
+        fill="solid" 
+        placeholder="Type your email">
+          <div slot="label">Email <ion-text color="danger">(requerido)</ion-text></div>
+      </ion-input>
 
-  <div style="padding: 30px 40px;">
-    <ion-button shape="round" size="medium" expand="full" color="primary">Sign up</ion-button>
-  </div>
+      <br>
+      <!-- RUT -->
+      <ion-input 
+        label="RUT" 
+        type="text"
+        formControlName="rut"
+        labelPlacement="floating" 
+        [errorText]="formError('rut')"
+        fill="solid" 
+        placeholder="Type your RUT">
+          <div slot="label">RUT <ion-text color="danger">(requerido)</ion-text></div>
+      </ion-input>
 
-  <!-- <app-continue-with></app-continue-with> -->
+      <br>
+
+      <ion-item>
+        <!-- REGION -->
+        <ion-select
+          formControlName="region"
+          interface="action-sheet"
+          labelPlacement="stacked"
+          (ionChange)="onRegionChange()">
+          <div slot="label">Región <ion-text color="danger">(requerido)</ion-text></div>
+
+          <ion-select-option
+            *ngFor="let region of regiones"
+            [value]="region.valor">
+            {{region.nombre}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <br>
+
+      <ion-item>
+        <!-- COMUNA -->
+        <ion-select
+          formControlName="comuna"
+          interface="action-sheet"
+          labelPlacement="stacked">
+        <div slot="label">Comuna <ion-text color="danger">(requerido)</ion-text></div>
+          <ion-select-option
+            *ngFor="let comuna of comunas"
+            [value]="comuna">
+            {{comuna}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <br>
+      <!-- Contraseña -->
+      <ion-input 
+        label="Password"
+        type="password"
+        formControlName="password"
+        labelPlacement="stacked" 
+        [errorText]="formError('password')"
+        fill="solid"  
+        placeholder="Type your password">
+
+        <div slot="label">Contraseña <ion-text color="danger">(requerido)</ion-text></div>
+        <ion-input-password-toggle color="medium" slot="end"></ion-input-password-toggle>
+      </ion-input>
+      
+      <br>
+      <!-- Confirmar Contraseña -->
+      <ion-input 
+        label="Confirm your password" 
+        type="password"
+        formControlName="confirm_password"
+        labelPlacement="stacked" 
+        [errorText]="formError('confirm_password')"
+        fill="solid"  
+        placeholder="Type your password">
+
+        <div slot="label">Confirma tu contraseña <ion-text color="danger">(requerido)</ion-text></div>
+        <ion-input-password-toggle color="medium" slot="end"></ion-input-password-toggle>
+
+      </ion-input>
+    
+    </div>
+      <br>
+      
+      <!-- Terminos y condiciones -->
+      <div style="padding: 20px;">
+        <ion-toggle 
+        formControlName="tyc" 
+        labelPlacement="start" 
+        color="success">
+          Acepto los términos y condiciones 
+          <ion-text color="danger">(requerido)</ion-text>
+        </ion-toggle>
+      </div>
+
+      <!-- Enviar formulario -->
+      <div style="padding: 30px 40px;">
+        <ion-button 
+          shape="round" 
+          size="medium" 
+          expand="full" 
+          color="primary"
+          type="submit"
+          [disabled]="!formulario.valid"
+          
+          routerLink="../login"
+          >{{btnText}}</ion-button>
+      </div>
+  </form>
 </ion-content>

@@ -2,32 +2,51 @@
   
   <h1 align="center" style="margin-top: 100px;">Login</h1>
   
-  <div class="registro" style="padding: 20px;">
-    <ion-input
-      label="Email" 
-      class="item" 
-      label-placement="floating" 
-      fill="solid" 
-      type="email" 
-      placeholder="Type your email"
-      errorText="Invalid email"
-      ngModel
-      email></ion-input>
-    <br>
-    <ion-input label="Password" class="item" labelPlacement="floating" fill="solid" type="password" placeholder="Type your password"></ion-input>
-    <p class="centered-text" style="margin-top: -5px;"><a>Forgot password?</a></p>
-  </div>
-  
-  <div style="padding: 0px 40px;">
-    <ion-button 
-      shape="round" 
-      size="medium" 
-      expand="full" 
-      color="primary"
-      href="/home">Login</ion-button>
-    <p class="centered-text">Don't have an account? <a href="/cuenta/registro/">Signup</a></p>
-  </div>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
+    <div class="registro" style="padding: 20px;">
+      <ion-input
+        label="Email"
+        type="email"  
+        formControlName="correo"
+        label-placement="floating" 
+        [errorText]="formError('correo')"
+        fill="solid" 
+        placeholder="Type your email" >
+         <div slot="label">RUT <ion-text color="danger">(requerido)</ion-text></div>
+      </ion-input>
+      <br>
+      
+      <ion-input 
+        label="Password"
+        type="password" 
+        formControlName="password"
+        labelPlacement="floating" 
+        [errorText]="formError('password')"
+        fill="solid" 
+        placeholder="Type your password">
+          <div slot="label">Contraseña <ion-text color="danger">(requerido)</ion-text></div>
+          <ion-input-password-toggle color="medium" slot="end"></ion-input-password-toggle>
+      </ion-input>
+
+      <p class="centered-text" style="margin-top: -5px;"><a>Forgot password?</a></p>
+    </div>
+    
+    <div style="padding: 0px 40px;">
+      <ion-button 
+        shape="round" 
+        size="medium" 
+        expand="full" 
+        color="primary"
+        type="submit"
+        [disabled]="!formulario.valid"
+        routerLink="/home"
+        >login</ion-button>
+        
+      <p class="centered-text">Don't have an account? <a routerLink="/cuenta/registro/">Signup</a></p>
+    </div>
+  </form>
+  <a href="/home">Enlace temporal de desarrollo</a>
  <app-continue-with></app-continue-with>
   
 </ion-content>
