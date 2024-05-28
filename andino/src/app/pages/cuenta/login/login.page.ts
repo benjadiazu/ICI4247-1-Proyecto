@@ -36,13 +36,13 @@ export class LoginPage implements OnInit {
   // Método que se ejecuta al enviar el formulario
   onSubmit() {
     console.log('Formulario enviado:', this.formulario.value);
-    if(this.formulario.get("correo")?.value=='hola@gmail.com' && this.formulario.get("password")?.value=='123456'){
+    if(this.formulario.get("correo")?.value=='generico@gmail.com' && this.formulario.get("password")?.value=='123456'){
       this.mensaje="usuario exite";
       this.router.navigateByUrl('/home');
     }
     else{
       console.log("no valido");
-      this.errorMessage = "Credenciales incorrectas. Inténtalo de nuevo.";
+      this.errorMessage = "User invalid, try again.";
     }
   }
 
