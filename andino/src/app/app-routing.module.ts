@@ -6,6 +6,11 @@ import { TabComponent } from './misc/tab/tab.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
     component: LoginPage
   },
   {

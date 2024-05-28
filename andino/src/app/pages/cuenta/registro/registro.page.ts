@@ -17,7 +17,9 @@ interface Region{
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
 })
+
 export class RegistroPage implements OnInit {
+  alertbuttons=['Accept'];
   formulario:FormGroup;
   regiones: Region[] = [];
   comunas: string[] = [];
@@ -35,14 +37,7 @@ export class RegistroPage implements OnInit {
     });
   }
 
-  get btnColor() {
-    return this.formulario.valid ? 'success' : 'danger';
-  }
-
-  get btnText() {
-    return this.formulario.valid ? 'Formulario válido' : 'El formulario no es válido';
-  }
-
+  // Cargar regiones
   ngOnInit() {
     this.regionService.getRegiones().subscribe(data => {
       this.regiones = Object.entries(data.regiones).map(([key, value]) => ({
@@ -68,6 +63,7 @@ export class RegistroPage implements OnInit {
     console.log(this.formulario.value);
   }
 
+  // Obtener mensajes de error
   formError(campo: string): string | null {
     const control = this.formulario.get(campo);
     if (control && control.errors) {

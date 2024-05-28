@@ -24,7 +24,7 @@
       fill="solid" 
       type="text" 
       placeholder="Type your username">
-        <div slot="label">Nombre <ion-text color="danger">(requerido)</ion-text></div>
+        <div slot="label">Nombre <ion-text color="danger">(Required)</ion-text></div>
       </ion-input>
 
       <br>
@@ -37,7 +37,7 @@
         [errorText]="formError('correo')"
         fill="solid" 
         placeholder="Type your email">
-          <div slot="label">Email <ion-text color="danger">(requerido)</ion-text></div>
+          <div slot="label">Email <ion-text color="danger">(Required)</ion-text></div>
       </ion-input>
 
       <br>
@@ -50,7 +50,7 @@
         [errorText]="formError('rut')"
         fill="solid" 
         placeholder="Type your RUT">
-          <div slot="label">RUT <ion-text color="danger">(requerido)</ion-text></div>
+          <div slot="label">RUT <ion-text color="danger">(Required)</ion-text></div>
       </ion-input>
 
       <br>
@@ -62,7 +62,7 @@
           interface="action-sheet"
           labelPlacement="stacked"
           (ionChange)="onRegionChange()">
-          <div slot="label">Región <ion-text color="danger">(requerido)</ion-text></div>
+          <div slot="label">Región <ion-text color="danger">(Required)</ion-text></div>
 
           <ion-select-option
             *ngFor="let region of regiones"
@@ -80,7 +80,7 @@
           formControlName="comuna"
           interface="action-sheet"
           labelPlacement="stacked">
-        <div slot="label">Comuna <ion-text color="danger">(requerido)</ion-text></div>
+        <div slot="label">Comuna <ion-text color="danger">(Required)</ion-text></div>
           <ion-select-option
             *ngFor="let comuna of comunas"
             [value]="comuna">
@@ -100,7 +100,7 @@
         fill="solid"  
         placeholder="Type your password">
 
-        <div slot="label">Contraseña <ion-text color="danger">(requerido)</ion-text></div>
+        <div slot="label">Contraseña <ion-text color="danger">(Required)</ion-text></div>
         <ion-input-password-toggle color="medium" slot="end"></ion-input-password-toggle>
       </ion-input>
       
@@ -115,7 +115,7 @@
         fill="solid"  
         placeholder="Type your password">
 
-        <div slot="label">Confirma tu contraseña <ion-text color="danger">(requerido)</ion-text></div>
+        <div slot="label">Confirma tu contraseña <ion-text color="danger">(Required)</ion-text></div>
         <ion-input-password-toggle color="medium" slot="end"></ion-input-password-toggle>
 
       </ion-input>
@@ -129,14 +129,15 @@
         formControlName="tyc" 
         labelPlacement="start" 
         color="success">
-          Acepto los términos y condiciones 
-          <ion-text color="danger">(requerido)</ion-text>
+          I agree to the terms and conditions
+          <ion-text color="danger">(Required)</ion-text>
         </ion-toggle>
       </div>
 
       <!-- Enviar formulario -->
       <div style="padding: 30px 40px;">
-        <ion-button 
+        <ion-button
+          id="present-alert"
           shape="round" 
           size="medium" 
           expand="full" 
@@ -145,7 +146,13 @@
           [disabled]="!formulario.valid"
           
           routerLink="../login"
-          >{{btnText}}</ion-button>
+          >SignUp</ion-button>
       </div>
+      <ion-alert
+        trigger="present-alert"
+        header="Thanks for signing up"
+        message="Now you can login"
+        [buttons]='alertbuttons'
+      ></ion-alert>
   </form>
 </ion-content>

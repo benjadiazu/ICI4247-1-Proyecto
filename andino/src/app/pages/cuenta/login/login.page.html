@@ -5,6 +5,7 @@
   <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
     <div class="registro" style="padding: 20px;">
+      <p *ngIf="errorMessage" class="centered-text" style="color: red;">{{ errorMessage }}</p>
       <ion-input
         label="Email"
         type="email"  
@@ -40,13 +41,11 @@
         color="primary"
         type="submit"
         [disabled]="!formulario.valid"
-        routerLink="/home"
         >login</ion-button>
         
       <p class="centered-text">Don't have an account? <a routerLink="/cuenta/registro/">Signup</a></p>
     </div>
   </form>
-  <a href="/home">Enlace temporal de desarrollo</a>
  <app-continue-with></app-continue-with>
   
 </ion-content>

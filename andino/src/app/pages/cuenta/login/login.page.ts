@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
   formulario:FormGroup;
   mensaje:String="";
-  logueado=false;
+  errorMessage: string = '';
 
   constructor(private form:FormBuilder, private router:Router) {
     this.formulario = this.form.group({
@@ -20,17 +20,10 @@ export class LoginPage implements OnInit {
     });
   }
 
-  get btnColor() {
-    return this.formulario.valid ? 'success' : 'danger';
-  }
-
-  get btnText() {
-    return this.formulario.valid ? 'Formulario válido' : 'El formulario no es válido';
-  }
-
   ngOnInit() {
   }
 
+  // Obtener mensajes de error
   formError(campo: string): string | null {
     const control = this.formulario.get(campo);
     if (control && control.errors) {
@@ -40,15 +33,17 @@ export class LoginPage implements OnInit {
     return null;
   }
 
+  // Método que se ejecuta al enviar el formulario
   onSubmit() {
-    console.log(this.formulario.value);
-    // if(this.formulario.get("correo")?.value=='hola@gmail.com' && this.formulario.get("password")?.value=='123456'){
-    //   this.mensaje="usuario exite";
-    //   this.router.navigateByUrl('/home');
-    // }
-    // else{
-    //   console.log("no valido");
-    // }
+    console.log('Formulario enviado:', this.formulario.value);
+    if(this.formulario.get("correo")?.value=='hola@gmail.com' && this.formulario.get("password")?.value=='123456'){
+      this.mensaje="usuario exite";
+      this.router.navigateByUrl('/home');
+    }
+    else{
+      console.log("no valido");
+      this.errorMessage = "Credenciales incorrectas. Inténtalo de nuevo.";
+    }
   }
 
 }
