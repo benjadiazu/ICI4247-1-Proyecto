@@ -46,13 +46,10 @@ Si el usuario desea iniciar sesión con su cuenta de Google, debe haber iniciado
 
 ## Funcionalidad de sincronización del robot
 
-Esta funcionalidad se encarga de mostrar los dispositivos conectados o los agregados recientemente. En la sección de dispositivos conectados se presentará la siguiente información:
+Esta funcionalidad se encarga de mostrar los robots disponibles para conectarse o desconectarse. En la sección de dispositivos conectados se presentará la siguiente información:
 
 - Nombre del robot.
 - ID del robot.
-- Batería del robot.
-
-Además, para cada robot vinculado existirá un botón deslizable que permitirá conectar o desconectar el robot de la aplicación.
 
 ## Funcionalidad de análisis estadístico
 
