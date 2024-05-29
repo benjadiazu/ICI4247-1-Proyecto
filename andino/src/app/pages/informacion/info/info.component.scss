@@ -1,0 +1,30 @@
+ion-card{
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+    width: 60px;
+    border-radius: 20px;
+    opacity: 80%;
+    color: black;
+    font-size: 18px;
+}
+
+ion-row {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+}
+
+ion-grid {
+    margin: 50px;
+    ion-label{
+        font-size: 16px;
+    }
+}

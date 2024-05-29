@@ -15,6 +15,7 @@ interface RegionesJSON {
 @Injectable({
   providedIn: 'root',
 })
+
 export class RegionesService {
   private readonly jsonUrl = 'assets/regiones-comunas.json';
 
