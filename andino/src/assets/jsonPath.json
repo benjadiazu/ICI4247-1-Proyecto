@@ -1,0 +1,10 @@
+{
+    "mensajes":{
+        "mensaje0":{"mensaje":"Route Finished.\nRobot is back into the Start."},
+        "mensaje1":{"mensaje":"Black Square detected.\nTurned left and advance 1m"},
+        "mensaje2":{"mensaje":"Turned right and advance 3m."},
+        "mensaje3":{"mensaje":"PERSON DETECTED\nState: Critical\nPRESS TO GET ROUTE"},
+        "mensaje4":{"mensaje":"Turned right and advanced 2 m."},
+        "mensaje5":{"mensaje":"Robot started the trip by going 4 m straight."}
+    }
+}
