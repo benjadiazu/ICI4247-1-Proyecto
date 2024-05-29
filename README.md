@@ -95,7 +95,7 @@ Para la base de datos, se tomó la decisión de utilizar un motor de bases de da
 
 ## Patrones de diseño
 
-•	La aplicación móvil hace uso de un componente tab en la parte inferior de la pantalla que es utilizada en varias de sus páginas como barra de navegación, esto con el objetivo de poder moverse entre pestañas con facilidad. La ubicación de este componente está específicamente en la carpeta tab, dentro del módulo misc del proyecto y es usado en las páginas “home”, “monitorear”, “conectar” e “información”.
+•	La aplicación móvil hace uso de un componente tab en la parte inferior de la pantalla que es utilizada en varias de sus páginas como barra de navegación, esto con el objetivo de poder moverse entre pantallas con facilidad. La ubicación de este componente está específicamente en la carpeta tab, dentro del módulo misc del proyecto y es usado en las páginas “home”, “monitorear”, “conectar” e “información”.
 
 •	A la hora de iniciar sesión o registrarse, en caso de que el usuario seleccione y deje un campo en blanco, se mostrará el contorno del campo en color rojo junto con un mensaje indicando el error. Además, si el usuario ingresa datos que no tienen el formato esperado, se le indicará el error en un mensaje similar.
 
