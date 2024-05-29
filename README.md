@@ -40,7 +40,7 @@ Al seleccionar la función de registro, se redireccionará a una nueva ventana d
 
 ## Funcionalidad de inicio de sesión
 
-Al abrir la aplicación para iniciar sesión mediante un formulario de celdas, se debe introducir la cuenta con el formato "*nombre_de_usuario@nombre_de_dominio.extensión_de_dominio*", por ejemplo: *aquiles.baeza@gmail.com.* Además, se requiere ingresar la contraseña. En caso de ingresar incorrectamente alguno de los datos mencionados anteriormente, la página se recargará y se enviará una notificación al usuario.
+Al abrir la aplicación para iniciar sesión mediante un formulario de celdas, se debe introducir la cuenta: *generico@gmail.com*", junto con la contraseña: 123456. En caso de ingresar incorrectamente alguno de los datos mencionados anteriormente se mostrará un mensaje de error.
 
 Si el usuario desea iniciar sesión con su cuenta de Google, debe haber iniciado sesión previamente en su dispositivo. En este caso, será redirigido a una nueva ventana donde deberá seleccionar la cuenta que desea sincronizar con la aplicación.
 
