@@ -73,6 +73,10 @@ La funcionalidad de monitor consistirá en mostrar al usuario un registro de la 
 
 </div>
 
+## Lectura JSON
+
+Una vez se abre la pantalla de registro se lee el archivo json "regiones-comunas.json" ubicada en la carpeta assets. Una vez cargado el archivo, el usuario podrá seleccionar diversas regiones y comunas que se mostrarán por pantalla.
+
 ## Modelo de la Base de Datos
 
 Para modelar la base de datos de la aplicación se tomaron en cuenta las siguientes características que debe considerar la aplicación:
