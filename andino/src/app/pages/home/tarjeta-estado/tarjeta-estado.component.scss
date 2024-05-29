@@ -1,10 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-.card-title{
-    font-family: 'Montserrat', sans-serif !important;
-}
-
 .status{
+    font-size: 20px;
     display: inline-block;
     padding: 5px 10px;
     background-color: red;
@@ -16,4 +11,7 @@
 .card{
     background-color: #f7f7f7;
     margin: 20px auto;
+    ion-card-title{
+      font-size:25px;
+    }
 }

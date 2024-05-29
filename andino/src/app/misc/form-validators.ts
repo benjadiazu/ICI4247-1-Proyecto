@@ -4,9 +4,6 @@ function validaDV(rut: string) {
   // Se separa el número del dígito verificador
   const [numero, dv] = rut.replace('-K', '-k').split('-');
 
-  // Aquí se debe aplicar módulo 11. La función se extrajo de:
-  // https://validarutchile.cl/calcular-rut-en-javascript.php
-  // ! OJO: Es una función que se llama a sí misma.
   const dvVer = ((T: number): string => {
     let M = 0,
       S = 1;

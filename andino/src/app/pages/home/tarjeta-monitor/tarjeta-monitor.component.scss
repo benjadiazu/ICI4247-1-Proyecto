@@ -1,12 +1,17 @@
 .status{
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: red;
-    color: white;
-    border-radius: 4px;
-  }
+  font-size: 20px;
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border-radius: 4px;
+  
+}
 
 .card{
-    background-color: #f7f7f7;
-    margin: 20px auto;
+  background-color: #f7f7f7;
+  margin: 20px auto;
+  ion-card-title{
+    font-size:25px;
+  }
 }

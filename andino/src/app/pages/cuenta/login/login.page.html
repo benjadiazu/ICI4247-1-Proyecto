@@ -4,6 +4,7 @@
   
   <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
+    <!-- INPUT email -->
     <div class="registro" style="padding: 20px;">
       <p *ngIf="errorMessage" class="centered-text" style="color: red;">{{ errorMessage }}</p>
       <ion-input
@@ -18,6 +19,7 @@
       </ion-input>
       <br>
       
+      <!-- INPUT contraseña -->
       <ion-input 
         label="Password"
         type="password" 
@@ -33,6 +35,7 @@
       <p class="centered-text" style="margin-top: -5px;"><a>Forgot password?</a></p>
     </div>
     
+    <!-- botón login -->
     <div style="padding: 0px 40px;">
       <ion-button 
         shape="round" 

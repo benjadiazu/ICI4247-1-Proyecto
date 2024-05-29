@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ConectarPageRoutingModule } from './conectar-routing.module';
 
 import { ConectarPage } from './conectar.page';
+import { TarjetaComponent } from './tarjeta/tarjeta.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { ConectarPage } from './conectar.page';
     IonicModule,
     ConectarPageRoutingModule
   ],
-  declarations: [ConectarPage]
+  declarations: [
+    ConectarPage,
+    TarjetaComponent
+  ]
 })
 export class ConectarPageModule {}
