@@ -2,9 +2,9 @@
 
 <div align="center">
 
-[![angular-badge-sm]][angular-web] [![css3-badge-sm]][css3-web] [![figma-badge-sm]][figma-web] [![git-badge-sm]][git-web] [![github-badge-sm]][github-web] [![html5-badge-sm]][html5-web] [![ionic-badge-sm]][ionic-web] [![js-badge-sm]][js-web] [![mysql-badge-sm]][mysql-web] [![nodejs-badge-sm]][nodejs-web] [![npm-badge-sm]][npm-web] [![ts-badge-sm]][ts-web] [![vscode-badge-sm]][vscode-web]
+[![angular-badge-sm]][angular-web] [![css3-badge-sm]][css3-web] [![git-badge-sm]][git-web] [![github-badge-sm]][github-web] [![html5-badge-sm]][html5-web] [![ionic-badge-sm]][ionic-web] [![js-badge-sm]][js-web] [![mysql-badge-sm]][mysql-web] [![nodejs-badge-sm]][nodejs-web] [![npm-badge-sm]][npm-web] [![ts-badge-sm]][ts-web] [![vscode-badge-sm]][vscode-web]
 
-[![ios-development-badge-sm]][ios-development-web] [![android-development-badge-sm]][android-development-web]
+[![android-development-badge-sm]][android-development-web]
 
 </div
 
