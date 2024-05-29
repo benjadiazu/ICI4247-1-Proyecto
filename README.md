@@ -76,7 +76,7 @@ La funcionalidad de monitor consistirá en mostrar al usuario un registro de la 
 
 </div>
 
-##Modelo de la Base de Datos
+## Modelo de la Base de Datos
 
 Para modelar la base de datos de la aplicación se tomaron en cuenta las siguientes características que debe considerar la aplicación:
 
@@ -85,11 +85,12 @@ Para modelar la base de datos de la aplicación se tomaron en cuenta las siguien
 
 A partir de lo anterior, lo que se consideró para la aplicación fue la utilización de dos API's REST para realizar las conexiones necesarias, siendo una de ellas, la conexión con el usuario y sus rutas pasadas, mientras que la otra se comunicará con el robot. El siguiente esquema muestra como sería la comunicación entre el frontend y backend:
 
-[IMAGEN DE ROBÓTICA (COMUNICACIÓN CON LA UI]
+![Diagrama de comunicación](/Images/Diagrama_UI.png)
 
 Para la base de datos, se tomó la decisión de utilizar un motor de bases de datos de tipo relacional, esto porque se espera conseguir un mejor orden y manejo de los datos a través de consultas. Específicamente, se decidió optar por el motor MySQL para realizar la base de datos. Para describir de mejor forma la forma de guardar los datos, se adjuntan a continuación los diagramas de entidad-relación y modelo relacional del sistema:
 
-[IMáGENES]
+![Diagrama de comunicación](/Images/Diagrama_UI.png)
+![Diagrama de comunicación](/Images/Diagrama_UI.png)
 
 [js-badge-sm]: https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat
 [js-web]: https://developer.mozilla.org/es/docs/Web/JavaScript
