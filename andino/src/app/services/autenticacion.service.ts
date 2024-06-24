@@ -15,30 +15,32 @@ export class AutenticacionService {
   }
 
   IniciarSesion(usuario:string,password:string):Observable<any>{
-    let headers= new HttpHeaders({'Content-Type':'application/json;charset=utf-8'})
+    let header= new HttpHeaders({'Content-Type':'application/json;charset=utf-8'})
                                 .append("Access-Control-Allow-Headers", "Access-Control-*, Origin, X-Requested-With, Content-Type, Accept")
                                 .append('Access-Control-Allow-Origin','*',)
                                 .append('Access-Control-Allow-Methods','*');
   
-    let body={"usuario":usuario,"password":password};
-    return this.http.post(`${this.backend}/login`, body, { headers }).pipe(
+    let body={"Nombre":usuario,"Contrasenya":password};
+
+    return this.http.post(`${this.backend}/login`, body, {headers:header }).pipe(
       tap((response: any) => {
-        const token = response.token;
+        const token = response['access_token'];
         if (token) {
           localStorage.setItem('authToken', token);
+          console.log(localStorage.getItem('authToken'));
         }
       })
     );
   }
 
-  RegistroUsuario(usuario:string,correo:string,rut:string,region:string,comuna:string,password:string):Observable<any>{
-    let headers= new HttpHeaders({'Content-Type':'application/json;charset=utf-8'})
+  RegistroUsuario(Nombre:string,ID_Robot:string,is_admin:string,Correo:string,rut:string,Región:string,Comuna:string,Contrasenya:string):Observable<any>{
+    let header= new HttpHeaders({'Content-Type':'application/json;charset=utf-8'})
                                 .append("Access-Control-Allow-Headers", "Access-Control-*, Origin, X-Requested-With, Content-Type, Accept")
                                 .append('Access-Control-Allow-Origin','*',)
                                 .append('Access-Control-Allow-Methods','*');
   
-    let body={"usuario":usuario,"correo":correo,"rut":rut,"region":region,"comuna":comuna,"password":password};
-    return this.http.post(`${this.backend}/register`, body, { headers })
+    let body={"Nombre":Nombre,"is_admin":is_admin,"RUT":rut,"Correo":Correo,"Región":Región,"Comuna":Comuna,"Contrasenya":Contrasenya};
+    return this.http.post(`${this.backend}/register`, body, {headers:header })
   }
 
   obtenerToken():string | null{

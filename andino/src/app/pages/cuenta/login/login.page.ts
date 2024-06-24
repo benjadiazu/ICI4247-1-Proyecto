@@ -44,9 +44,15 @@ export class LoginPage implements OnInit {
     this.authService.IniciarSesion(username,password).subscribe(
       response => {
         //Respuesta API
-        console.log("Respuesta enviada", response);
+        console.log("Respuesta enviada", response['message']);
         this.mensaje = "Respuesta enviada";
-        this.router.navigateByUrl('/home');
+
+        if(response['message'] == 'aprobado'){
+          this.router.navigateByUrl('/home');
+        }
+        else{
+          console.log("EL USUARIO NO EXISTE!")
+        }
       },
       error => {
         //Error API

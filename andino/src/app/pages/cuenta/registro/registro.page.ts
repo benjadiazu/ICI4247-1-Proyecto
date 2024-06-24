@@ -72,13 +72,15 @@ export class RegistroPage implements OnInit {
     const region = this.formulario.get("region")?.value;
     const comuna = this.formulario.get("comuna")?.value;
     const password = this.formulario.get("password")?.value;
+    const id_rol = "0";
+    const id_robot = "2224";
 
-    this.authService.RegistroUsuario(username,email,rut,region,comuna,password).subscribe(
+    this.authService.RegistroUsuario(username,id_robot,id_rol,email,rut,region,comuna,password).subscribe(
       response => {
         //Respuesta API
         console.log("Respuesta enviada", response);
         this.mensaje = "Respuesta enviada";
-        this.router.navigateByUrl('../login');
+        this.router.navigateByUrl('/login');
       },
       error => {
         //Error API
