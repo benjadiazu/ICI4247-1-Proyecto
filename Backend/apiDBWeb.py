@@ -109,7 +109,7 @@ def app_register():
     except:
         #Si el usuario ya existe, se emite un mensaje de error.
         cur.close()
-        jsonify({"status": "Usuario ya existe en la base de datos."})
+        return jsonify({"status": "Usuario ya existe en la base de datos."})
     finally:
         # Cerrar conexión.
         cur.close()
