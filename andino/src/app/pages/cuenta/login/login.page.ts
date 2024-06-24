@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup, Validators} from '@angular/forms';
 import { FormError, mensajesErr } from 'src/app/misc/form-errors';
 import { Router } from '@angular/router';
+import { AutenticacionService } from 'src/app/services/autenticacion.service';
 
 @Component({
   selector: 'app-login',
@@ -13,9 +14,9 @@ export class LoginPage implements OnInit {
   mensaje:String="";
   errorMessage: string = '';
 
-  constructor(private form:FormBuilder, private router:Router) {
+  constructor(private form:FormBuilder, private router:Router, private authService:AutenticacionService) {
     this.formulario = this.form.group({
-      correo:['',[Validators.required, Validators.email]],
+      username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       password: ['',[Validators.required,Validators.minLength(6),Validators.maxLength(20)]],
     });
   }
@@ -36,14 +37,30 @@ export class LoginPage implements OnInit {
   // Método que se ejecuta al enviar el formulario
   onSubmit() {
     console.log('Formulario enviado:', this.formulario.value);
-    if(this.formulario.get("correo")?.value=='generico@gmail.com' && this.formulario.get("password")?.value=='123456'){
-      this.mensaje="usuario exite";
-      this.router.navigateByUrl('/home');
-    }
-    else{
-      console.log("no valido");
-      this.errorMessage = "User invalid, try again.";
-    }
-  }
 
+    const username = this.formulario.get("username")?.value;
+    const password = this.formulario.get("password")?.value;
+
+    this.authService.IniciarSesion(username,password).subscribe(
+      response => {
+        //Respuesta API
+        console.log("Respuesta enviada", response);
+        this.mensaje = "Respuesta enviada";
+        this.router.navigateByUrl('/home');
+      },
+      error => {
+        //Error API
+        console.error('Error en petición',error);
+        this.errorMessage = "Algo ocurrió mal, intenta de nuevo";
+      }
+    );
+    // if(this.formulario.get("username")?.value=='admin' && this.formulario.get("password")?.value=='123456'){
+    //   this.mensaje="usuario exite";
+    //   this.router.navigateByUrl('/home');
+    // }
+    // else{
+    //   console.log("no valido");
+    //   this.errorMessage = "User invalid, try again.";
+    // }
+  }
 }

@@ -4,6 +4,8 @@ import {FormBuilder,FormGroup, Validators} from '@angular/forms';
 import { RegionesService } from 'src/app/services/regiones.service';
 import { passwordMatchValidator, rutValidator } from 'src/app/misc/form-validators';
 import { FormError, mensajesErr } from 'src/app/misc/form-errors';
+import { AutenticacionService } from 'src/app/services/autenticacion.service';
+import { Router } from '@angular/router';
 
 interface Region{
   id:string;
@@ -20,11 +22,13 @@ interface Region{
 
 export class RegistroPage implements OnInit {
   alertbuttons=['Accept'];
+  mensaje:String="";
+  errorMessage: string = '';
   formulario:FormGroup;
   regiones: Region[] = [];
   comunas: string[] = [];
 
-  constructor(private form:FormBuilder, private regionService:RegionesService) {
+  constructor(private form:FormBuilder, private router:Router,private regionService:RegionesService,private authService:AutenticacionService) {
     this.formulario = this.form.group({
       usuario: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       correo: ['',[Validators.required, Validators.email]],
@@ -61,6 +65,27 @@ export class RegistroPage implements OnInit {
   // Método que se ejecuta al enviar el formulario
   onSubmit() {
     console.log(this.formulario.value);
+
+    const username = this.formulario.get("usuario")?.value;
+    const email = this.formulario.get("correo")?.value;
+    const rut = this.formulario.get("rut")?.value;
+    const region = this.formulario.get("region")?.value;
+    const comuna = this.formulario.get("comuna")?.value;
+    const password = this.formulario.get("password")?.value;
+
+    this.authService.RegistroUsuario(username,email,rut,region,comuna,password).subscribe(
+      response => {
+        //Respuesta API
+        console.log("Respuesta enviada", response);
+        this.mensaje = "Respuesta enviada";
+        this.router.navigateByUrl('../login');
+      },
+      error => {
+        //Error API
+        console.error('Error en petición',error);
+        this.errorMessage = "Algo ocurrió mal, intenta de nuevo";
+      }
+    );
   }
 
   // Obtener mensajes de error

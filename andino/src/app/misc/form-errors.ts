@@ -1,4 +1,5 @@
 const mensajesErr =  {
+    username: 'Invalid username format',
     required: 'This field is required',
     requiredTrue: 'This field is required',
     email: 'Invalid email format',

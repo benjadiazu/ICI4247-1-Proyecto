@@ -4,19 +4,19 @@
   
   <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-    <!-- INPUT email -->
+    <!-- INPUT username -->
     <div class="registro" style="padding: 20px;">
       <p *ngIf="errorMessage" class="centered-text" style="color: red;">{{ errorMessage }}</p>
+
       <ion-input
-        label="Email"
-        type="email"  
-        formControlName="correo"
-        label-placement="floating" 
-        [errorText]="formError('correo')"
-        fill="solid" 
-        placeholder="Type your email" >
-         <div slot="label">RUT <ion-text color="danger">(requerido)</ion-text></div>
+        label="Username"
+        formControlName="username"
+        label-placement="stacked" 
+        [errorText]="formError('username')"
+        fill="solid">
+         <div slot="label">Username <ion-text color="danger">(requerido)</ion-text></div>
       </ion-input>
+      
       <br>
       
       <!-- INPUT contraseña -->
