@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-06-2024 a las 20:22:01
+-- Tiempo de generación: 25-06-2024 a las 00:54:44
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `robot` (
-  `ID_Robot` int(11) NOT NULL,
+  `ID_Robot` int(11) NOT NULL DEFAULT 2224,
   `Nombre` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -55,14 +55,6 @@ CREATE TABLE `rutas` (
   `Cantidad_de_Zonas_Peligrosas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `rutas`
---
-
-INSERT INTO `rutas` (`ID_Ruta`, `ID_Usuario`, `Fecha`, `Cantidad_de_Personas`, `Personas_Ilesas`, `Personas_Heridas`, `Cantidad_de_Zonas_Peligrosas`) VALUES
-(100, 1212, '2024-06-13', 8, 5, 3, 2),
-(101, 1222, '2024-06-19', 10, 8, 2, 4);
-
 -- --------------------------------------------------------
 
 --
@@ -71,7 +63,7 @@ INSERT INTO `rutas` (`ID_Ruta`, `ID_Usuario`, `Fecha`, `Cantidad_de_Personas`, `
 
 CREATE TABLE `sensores` (
   `ID_Sensor` int(11) NOT NULL,
-  `ID_Robot` int(11) NOT NULL,
+  `ID_Robot` int(11) NOT NULL DEFAULT 2224,
   `Datos` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`Datos`))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -90,23 +82,25 @@ INSERT INTO `sensores` (`ID_Sensor`, `ID_Robot`, `Datos`) VALUES
 
 CREATE TABLE `usuarios` (
   `ID_Usuario` int(11) NOT NULL,
-  `ID_Robot` int(11) NOT NULL,
+  `ID_Robot` int(11) NOT NULL DEFAULT 2224,
   `Nombre` varchar(20) NOT NULL,
   `Contrasenya` varchar(60) NOT NULL,
   `Correo` varchar(40) NOT NULL,
-  `Región` varchar(20) NOT NULL,
+  `RUT` varchar(15) NOT NULL,
+  `Región` int(2) NOT NULL,
   `Comuna` varchar(20) NOT NULL,
-  `is_admin` tinyint(1) NOT NULL
+  `is_admin` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`ID_Usuario`, `ID_Robot`, `Nombre`, `Contrasenya`, `Correo`, `Región`, `Comuna`, `is_admin`) VALUES
-(1212, 2224, 'Thomas', '1234', 'thomas.molina@yahoo.es', 'Maule', 'Talca', 0),
-(1222, 2224, 'Benja', '0000', 'benja.diazu@yahoo.es', 'Magallanes', 'Porvenir', 1),
-(1414, 2224, 'Vicente', '$2b$12$ue.MyoVQJp0wb', 'lesos.cl@yahoo.es', 'Metropolitana', 'Santiago', 0);
+INSERT INTO `usuarios` (`ID_Usuario`, `ID_Robot`, `Nombre`, `Contrasenya`, `Correo`, `RUT`, `Región`, `Comuna`, `is_admin`) VALUES
+(1415, 2224, 'Benjamín', '$2b$12$lvdhRx2s99csRYXcSD0zS.t3NXBH1zmS13vAj81Jiz4l5kfmc9Hrq', 'benja.diazu@yahoo.es', '21125395-9', 6, 'Rancagua', 1),
+(1416, 2224, 'Thomas', '$2b$12$ZnNOFciDhxDFdRPa9B/VhOW1hpeN1ZEmJPuKou.KGYjRRzjemaxy6', 'thomas.molina@yahoo.es', '20805942-4', 5, 'Putaendo', 1),
+(1417, 2224, 'Vicente', '$2b$12$seCtyJprndKTtSDC464fYeYjL3x/1s13vCg.8a.tbuhoK5x8Zkz.e', 'vicente.mercado@yahoo.es', '21151511-2', 5, 'Quilpué', 0),
+(1418, 2224, 'test', '$2b$12$t7ZvwQrI0aDgnGX1GM3t/up6rbR/BhEXkj1yxS19kjXXkL58LejAO', 'test.prueba123@yahoo.es', '00000000-K', 7, 'Talca', 0);
 
 --
 -- Índices para tablas volcadas
@@ -137,7 +131,30 @@ ALTER TABLE `sensores`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`ID_Usuario`),
+  ADD UNIQUE KEY `Correo` (`Correo`,`RUT`),
   ADD KEY `ID_Robot` (`ID_Robot`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `rutas`
+--
+ALTER TABLE `rutas`
+  MODIFY `ID_Ruta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+
+--
+-- AUTO_INCREMENT de la tabla `sensores`
+--
+ALTER TABLE `sensores`
+  MODIFY `ID_Sensor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1419;
 
 --
 -- Restricciones para tablas volcadas

@@ -103,10 +103,16 @@ def app_register():
     db = get_db_connection('user')
     cur = db.cursor()
     # Ejecutar comando SQL.
-    cur.execute("INSERT INTO usuarios (Nombre, Contrasenya, Correo, RUT, Región, Comuna) VALUES (%s, %s, %s, %s, %s, %s)", (nombre, contraEncriptada, correo, rut, region, comuna))
-    db.commit()
-    # Cerrar conexión.
-    cur.close()
+    try:
+        cur.execute("INSERT INTO usuarios (Nombre, Contrasenya, Correo, RUT, Región, Comuna) VALUES (%s, %s, %s, %s, %s, %s)", (nombre, contraEncriptada, correo, rut, region, comuna))
+        db.commit()
+    except:
+        #Si el usuario ya existe, se emite un mensaje de error.
+        cur.close()
+        jsonify({"status": "Usuario ya existe en la base de datos."})
+    finally:
+        # Cerrar conexión.
+        cur.close()
 
     # Retornar mensaje de confirmación.
     return jsonify({"status": "Usuario Registrado"})
