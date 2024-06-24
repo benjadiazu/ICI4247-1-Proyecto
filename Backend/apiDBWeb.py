@@ -8,8 +8,8 @@ from flask_jwt_extended import (JWTManager, create_access_token, get_jwt, jwt_re
 # Inicializar app.
 app = Flask(__name__)
 
-#Permitir conexiones de origen específico.
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+# Permitir conexiones cualquier origen.
+CORS(app)
 
 # Incializar Bcrypt.
 bcrypt = Bcrypt(app)
@@ -63,7 +63,7 @@ def get_users():
     # Convertir datos a formato JSON.
     resp = []
     for row in rows:
-        resp.append({"ID_Usuario": row[0], "ID_Robot": row[1], "Nombre":row[2],"Contrasenya": row[3], "Correo": row[4], "Región": row[5], "Comuna": row[6], "is_admin": row[7]})
+        resp.append({"ID_Usuario": row[0], "ID_Robot": row[1], "Nombre":row[2],"Contrasenya": row[3], "Correo": row[4], "RUT": row[5], "Región": row[6], "Comuna": row[7], "is_admin": row[8]})
     return jsonify(resp)
 
 # Obtener todas las rutas (GET).
@@ -89,14 +89,12 @@ def get_routes():
 @app.route('/register', methods=['POST'])
 def app_register():
     # Datos recibidos en el Request.
-    id_usuario = request.json['ID_Usuario']
-    id_robot = request.json['ID_Robot']
     nombre = request.json['Nombre']
     contrasenya = request.json['Contrasenya']
     correo = request.json["Correo"]
+    rut = request.json["RUT"]
     region = request.json["Región"]
     comuna = request.json["Comuna"]
-    is_admin = request.json["is_admin"]
 
     # Encriptar la contraseña con Bcrypt.
     contraEncriptada = bcrypt.generate_password_hash(contrasenya).decode('utf-8')
@@ -105,7 +103,7 @@ def app_register():
     db = get_db_connection('user')
     cur = db.cursor()
     # Ejecutar comando SQL.
-    cur.execute("INSERT INTO usuarios (ID_Usuario, ID_Robot, Nombre, Contrasenya, Correo, Región, Comuna, is_admin) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", (id_usuario, id_robot, nombre, contraEncriptada, correo, region, comuna, is_admin))
+    cur.execute("INSERT INTO usuarios (Nombre, Contrasenya, Correo, RUT, Región, Comuna) VALUES (%s, %s, %s, %s, %s, %s)", (nombre, contraEncriptada, correo, rut, region, comuna))
     db.commit()
     # Cerrar conexión.
     cur.close()
@@ -150,7 +148,11 @@ def app_login():
                 access_token = create_access_token(identity=usuario, additional_claims=role_claim)
                 print(access_token, 2)
                 # Devolver mensaje de éxito con la token.
-                return jsonify(access_token=access_token)
+                response = {
+                    "message": "aprobado",
+                    "access_token": access_token
+                }
+                return jsonify(response)
             else:
                 return jsonify({"message": "Login fallido. Contraseña incorrecta."})
             
