@@ -64,7 +64,7 @@ def get_users():
     resp = []
     for row in rows:
         resp.append({"ID_Usuario": row[0], "ID_Robot": row[1], "Nombre":row[2],"Contrasenya": row[3], "Correo": row[4], "RUT": row[5], "Región": row[6], "Comuna": row[7], "is_admin": row[8]})
-    return jsonify(resp)
+    return jsonify(resp)    
 
 # Obtener todas las rutas (GET).
 @app.route('/routes', methods=['GET'])
@@ -151,7 +151,8 @@ def app_login():
                     # Conectarse a la BD como admin.
                     db = mysql.connector.connect(**db_config_admin)
                 # Crear un nuevo token con la identidad del usuario.
-                access_token = create_access_token(identity=usuario, additional_claims=role_claim)
+                id_usuario = row[0]
+                access_token = create_access_token(identity=id_usuario, additional_claims=role_claim)
                 print(access_token, 2)
                 # Devolver mensaje de éxito con la token.
                 response = {
@@ -214,12 +215,42 @@ def add_route():
     # Retornar mensaje de confirmación.
     return jsonify({"status": "Ruta Registrada"})
 
+@app.route('/user/get', methods=['POST'])
+@jwt_required()
+def get_user():
+    print("entra a getUSER\n")
+    # Obtener datos del access_token.
+    id_usuario = get_jwt_identity()
+    print(id_usuario)
+
+    # Iniciar conexión.
+    db = get_db_connection('user')
+    cur = db.cursor()
+    resp = []
+    try:
+        # Ejecutar comando SQL.
+        cur.execute("SELECT * FROM usuarios WHERE ID_Usuario = %s", (id_usuario,))
+        # Obtener los datos.
+        rows = cur.fetchall()
+
+        # Verificar que la ruta pertenece al usuario que solicitó la información.
+        for row in rows:
+            if id_usuario == row[0]:
+                resp.append({"ID_Usuario": row[0], "ID_Robot": row[1], "Nombre":row[2],"Contrasenya": row[3], "Correo": row[4], "RUT": row[5], "Región": row[6], "Comuna": row[7], "is_admin": row[8]})
+                return jsonify(resp)
+    except:
+        return jsonify({"message": "Error!"})
+    finally:
+        # Cerrar conexión.
+        cur.close()
+    return jsonify(resp)
+    
 @app.route('/user/<int:user_id>', methods=['DELETE'])
 @jwt_required()
-def delete_user(user_id):
+def delete_user():
     # Obtener datos del access_token.
-    current_user = get_jwt_identity()
-    print(current_user)
+    user_id = get_jwt_identity()
+    print(user_id)
     claims = get_jwt()
     print(claims)
     user_role = claims['role']
