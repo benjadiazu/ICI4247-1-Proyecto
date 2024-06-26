@@ -24,4 +24,16 @@ export class UserService {
     // console.log(token)
     return this.http.post(`${this.backend}/user/get`,{},{headers:header })
   }
+
+  deletePerson(id:string): Observable<any>{
+    let token= localStorage.getItem('authToken')
+    let header= new HttpHeaders({'Content-Type':'application/json;charset=utf-8','Authorization': `Bearer ${token}`})
+                                .append("Access-Control-Allow-Headers", "Access-Control-*, Origin, X-Requested-With, Content-Type, Accept")
+                                .append('Access-Control-Allow-Origin','*',)
+                                .append('Access-Control-Allow-Methods','*');
+
+    let body = {"ID_Usuario":id}
+    return this.http.delete(`${this.backend}/user/${id}`,{headers:header, body:body });
+  }
+
 }

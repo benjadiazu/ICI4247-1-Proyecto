@@ -5,7 +5,7 @@ const mensajesErr =  {
     email: 'Invalid email format',
     minlength: 'Minimum characters not reached',
     maxlength: 'Character limit reached',
-    pattern: 'Invalid format',
+    pattern: 'Invalid format. Must contain at least one uppercase letter and one number.',
     rutDv: 'Invalid check digit',
     rutFormat: 'Invalid RUT format XXXXXXXX-X',
     region: 'Region not selected',

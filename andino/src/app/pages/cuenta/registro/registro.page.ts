@@ -35,7 +35,7 @@ export class RegistroPage implements OnInit {
       rut:['',[Validators.required,rutValidator]],
       region: ['',Validators.required],
       comuna: [{value: '', disabled: true}, Validators.required],
-      password: ['',[Validators.required,Validators.minLength(6),Validators.maxLength(20)]],
+      password: ['',[Validators.required,Validators.minLength(6),Validators.maxLength(20),Validators.pattern(/^(?=.*[A-Z])(?=.*\d).{6,}$/)]],
       confirm_password:['',[Validators.required,passwordMatchValidator]],
       tyc: [false,Validators.requiredTrue],
     });

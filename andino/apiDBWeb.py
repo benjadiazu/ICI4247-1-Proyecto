@@ -146,7 +146,7 @@ def app_login():
             if bcrypt.check_password_hash(row[3], password):
                 # Verificar si el usuario ingresado es un administrador.
                 role_claim = {"role": "user"}
-                if row[7] == 1:
+                if row[8] == 1:
                     role_claim = {"role": "admin"}
                     # Conectarse a la BD como admin.
                     db = mysql.connector.connect(**db_config_admin)
@@ -247,13 +247,14 @@ def get_user():
     
 @app.route('/user/<int:user_id>', methods=['DELETE'])
 @jwt_required()
-def delete_user():
+def delete_user(user_id):
     # Obtener datos del access_token.
-    user_id = get_jwt_identity()
-    print(user_id)
+    user_token = get_jwt_identity()
+    print(user_token)
     claims = get_jwt()
     print(claims)
     user_role = claims['role']
+    print("\nusuario: ")
     print(user_role)
 
     # Iniciar conexión.
