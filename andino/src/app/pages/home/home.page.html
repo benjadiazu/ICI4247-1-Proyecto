@@ -5,7 +5,14 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    Settings
+    <ion-list *ngIf = "userInfo">
+      <ion-item>
+        Nombre de usuario: {{userInfo[0].Nombre}}
+        Correo: {{userInfo[0].Correo}}
+      </ion-item>
+      
+    </ion-list>
+    <!-- Settings -->
   </ion-content>
 </ion-menu>
 

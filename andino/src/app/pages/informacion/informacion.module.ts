@@ -10,12 +10,15 @@ import { InformacionPage } from './informacion.page';
 import { RoutesComponent } from './routes/routes.component';
 import { InfoComponent } from './info/info.component';
 
+import { MiscModule } from 'src/app/misc/misc.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InformacionPageRoutingModule
+    InformacionPageRoutingModule,
+    MiscModule
   ],
   declarations: [
     InformacionPage,

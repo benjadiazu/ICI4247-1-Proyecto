@@ -16,7 +16,7 @@ import { MiscModule } from 'src/app/misc/misc.module';
     FormsModule,
     IonicModule,
     MonitorearPageRoutingModule,
-    MiscModule,
+    MiscModule
   ],
   declarations: [
     MonitorearPage,
