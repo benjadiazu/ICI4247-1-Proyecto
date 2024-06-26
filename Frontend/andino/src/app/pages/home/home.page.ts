@@ -65,6 +65,15 @@ export class HomePage implements OnInit{
     await alert.present();
   }
 
+  async accesoPermitido() {
+    const alert = await this.alertController.create({
+      header: 'Acceso Permitido',
+      message: 'Cuenta borrada.',
+      buttons: ['OK'],
+    });
+    await alert.present();
+  }
+
   deleteAccount(userId: string) {
     this.userService.deletePerson(userId).subscribe(
       (response) => {
@@ -72,6 +81,7 @@ export class HomePage implements OnInit{
           this.accesoDenegado();
         }
         else{
+          this.accesoPermitido();
           console.log('Cuenta borrada!:', response);
         }
       },
