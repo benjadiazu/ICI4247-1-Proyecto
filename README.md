@@ -32,8 +32,11 @@ Para la conexión entre el Frontend y el backend se hace uso de servicios. Por e
 EF.4:
 <br>
 -Se hace uso de JWT para la autorización. Principalmente se usa para obtener un token que sirve, por ejemplo, para usar la función de eliminar cuenta. Esta función solo la pueden usar los administradores, y para ello, se le pasa el token que el backend le envió al usuario al logearse anteriormente.
+<br>
 -Se utiliza la encriptación de contraseñas en el backend. 
+<br>
 -Se limitan los permisos para los usuarios y los administradores.
+<br>
 -La base de datos tiene conexión especifica para el usuario y el administrador.
 
 [js-badge-sm]: https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat
